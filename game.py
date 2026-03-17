@@ -8,6 +8,15 @@ class NimGame:
     def is_game_over(self):
         if self.winner is not None:
             return True
+    
+    def get_winner(self):
+        return self.winner
+    
+    def get_state(self):
+        return {
+            'piles': self.piles,
+            'current_player': self.current_player
+        }
         
     def is_valid_move(self, pile_index, amount):
         if pile_index < 0 or pile_index >= len(self.piles):
